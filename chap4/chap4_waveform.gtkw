@@ -1,0 +1,46 @@
+[*]
+[*] GTKWave Analyzer v3.3.61 (w)1999-2014 BSI
+[*] Wed Jun 27 00:18:36 2018
+[*]
+[dumpfile] "/home/yulinLei/homemade_cpu/chap4/sopc.dump"
+[dumpfile_mtime] "Tue Jun 26 16:36:56 2018"
+[dumpfile_size] 33721
+[savefile] "/home/yulinLei/homemade_cpu/chap4/chap4_waveform.gtkw"
+[timestart] 119800
+[size] 1366 669
+[pos] -39 -39
+*-16.165325 230000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] openmips_sopc_tb.
+[treeopen] openmips_sopc_tb.openmips_sopc0.
+[treeopen] openmips_sopc_tb.openmips_sopc0.openmips0.
+[treeopen] openmips_sopc_tb.openmips_sopc0.openmips0.if_id0.
+[sst_width] 229
+[signals_width] 269
+[sst_expanded] 1
+[sst_vpaned_height] 295
+@22
+openmips_sopc_tb.openmips_sopc0.openmips0.pc_reg0.pc[31:0]
+openmips_sopc_tb.openmips_sopc0.openmips0.if_id0.if_pc[31:0]
+openmips_sopc_tb.openmips_sopc0.openmips0.if_id0.id_inst[31:0]
+openmips_sopc_tb.openmips_sopc0.openmips0.if_id0.id_pc[31:0]
+@28
+openmips_sopc_tb.openmips_sopc0.openmips0.id_ex0.clk
+@22
+openmips_sopc_tb.openmips_sopc0.openmips0.id_ex0.ex_aluop[7:0]
+@28
+openmips_sopc_tb.openmips_sopc0.openmips0.id_ex0.ex_alusel[2:0]
+@22
+openmips_sopc_tb.openmips_sopc0.openmips0.id_ex0.ex_wd[4:0]
+openmips_sopc_tb.openmips_sopc0.openmips0.id_ex0.ex_reg2[31:0]
+openmips_sopc_tb.openmips_sopc0.openmips0.id_ex0.ex_reg1[31:0]
+@28
+openmips_sopc_tb.openmips_sopc0.openmips0.regfile1.clk
+@22
+openmips_sopc_tb.openmips_sopc0.openmips0.regfile1.raddr1[4:0]
+openmips_sopc_tb.openmips_sopc0.openmips0.regfile1.rdata1[31:0]
+@28
+openmips_sopc_tb.openmips_sopc0.openmips0.regfile1.re1
+@29
+openmips_sopc_tb.openmips_sopc0.openmips0.regfile1.rst
+[pattern_trace] 1
+[pattern_trace] 0

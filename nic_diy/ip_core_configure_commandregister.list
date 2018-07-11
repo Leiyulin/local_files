@@ -1,0 +1,45 @@
+## overview of MAC register space (total size 256byte)
+1. base configuration	48byte		24dword
+2. statistics counter	66byte		33dword
+3. dword offset 0x39 is *not apply*!!
+4. transmit command	2byte		1 dword
+5. receive command	2byte		1 dword
+6. extended statistics counters 6byte	3 dword
+7. 3. dword offset 0x3F is *not apply/reserved*!!
+8. multicast hash table 128byte		64dword
+## MDIO space 0 and 1 (total size 128byte)
+9. MDIO space 0 or PCS function configuration	64byte	32dword
+10. MDIO space 1	64byte 		32dword
+	*notice:Reading or writing to MDIO Space 	 0 or MDIO Space 1 immediately triggers a
+	corresponding MDIO transaction to read 		or write the PHY register. Only bits
+	[15:0] of each register are significant. 	 Write 0 to bits [31:16] and ignore them
+	on reads.*
+	*asynchronize*
+## others (total size 128byte)
+10. supplementary unicast address	16byte	8dword
+11. reserved 		16byte 		8dword
+12. IEEE 1588v2 feature	14byte 		7dword
+13. reserved 	41dword	
+
+## the total size of config register is 512byte in MAC IP design!!!
+
+### pause mac control frame
+pause quanta 是 frame中 MAC control parameters section 的单位，每个pause quanta 相当于512比特时间
+### 流控自协商
+自协商信息由两个流控的比特位，即PAUSE 表示symmetric PAUSE，收发PAUSE FRAME；ASM DIR，表示Asymmetric PAUSE 表示只能接受或只能发送。（单工）
+
+*流控的逻辑*： 流控是因为在接受端口的buffer full的情况下，需要减少传输的流量的手段。通常是接受端向传输端发出PAUSE FRAME，然后对端进行响应。分为以下情况：
+1. 端口是半双工情况：通常采用'back pressure' 或者 'jamming'机制。具体就是端口向外大宋一些信号来占用链路，对端没有机会发送报文。
+2. 基于优先级的流控（PFC）（priority based flow control）
+基本思想就是将PAUSE FRAME 分优先级，以至于不堵塞所有链路。
+
+### loopback 接口的功能
+虚接口，功能：
+1. 作为路由器管理地址。
+
+### 在0x02 dword offset的register 是command register
+MAC configuration register. Use this register to control and
+configure the MAC function. The MAC function starts
+operation as soon as the transmit and receive enable bits in
+this register are turned on. Intel, therefore, recommends
+that you configure this register last.

@@ -1,0 +1,146 @@
+
+		
+		//asynchronous 
+		input  wire        reset,         //              reset_connection.reset
+		
+//-------------------------------------------------------------------------------------
+	// mac_config_sub.v & mac_config.v port
+		//clk for usr to manage MAC
+		//Set the signal to a value less than
+		//or equal to 125 MHz.
+		input  wire        clk,           // control_port_clock_connection.clk
+		//for user to manage MAC, transmit control signals:
+		//read and write the control regs in MAC ip
+		//32-bit word-aligned register address
+		input  wire [7:0]  address,       //                  control_port.address
+		output wire [31:0] readdata,      //                              .readdata
+		input  wire        read,          //                              .read
+		input  wire [31:0] writedata,     //                              .writedata
+		input  wire        write,         //                              .write
+		//Asserted during register read or register
+		//write access
+		output wire        waitrequest,   //                              .waitrequest
+//-------------------------------------------------------------------------------------
+//connected to mux block
+		// 2 clock control tx and rx
+		// tx_clk : MAC source
+		// rx_clk : PHY source
+		// 100 or 1000 Mbps(12.5/125MHz) settled by config i/o
+		//rising edge
+		//Clock enable from the PHY IP. When you turn on the Use clock enable for MAC
+		//parameter, this signal is used together with tx_clk and rx_clk to generate 125
+		//MHz, 25 MHz, and 2.5 MHz clocks.
+		input  wire        tx_clk,        //   pcs_mac_tx_clock_connection.clk
+		input  wire        rx_clk,        //   pcs_mac_rx_clock_connection.clk
+//-------------------------------------------------------------------------------------
+		//MAC status signal:
+
+		// mode = 1 -> 1Gbps
+		// mode = 0 -> 10/100Mbps
+		output wire        eth_mode,      //                              .eth_mode
+
+		input  wire        set_10,        //         mac_status_connection.set_10
+		input  wire        set_1000,      //                              .set_1000
+		//valid when mode = 0,enable 10Mbps
+		output wire        ena_10,        //                              .ena_10
+
+//-------------------------------------------------------------------------------------
+// connected to mux block
+		//gmii
+		//24pin, 10port
+		input  wire [7:0]  gm_rx_d,       //data//           mac_gmii_connection.gmii_rx_d
+		input  wire        gm_rx_dv,      //data valid//                              .gmii_rx_dv
+		input  wire        gm_rx_err,     //                              .gmii_rx_err
+
+		output wire [7:0]  gm_tx_d,       //                              .gmii_tx_d
+		output wire        gm_tx_en,      //                              .gmii_tx_en
+		output wire        gm_tx_err,     //                              .gmii_tx_err
+
+		// //mii function is N/A here
+		// input  wire [3:0]  m_rx_d,        //            mac_mii_connection.mii_rx_d
+		// input  wire        m_rx_en,       //                              .mii_rx_dv
+		// input  wire        m_rx_err,      //                              .mii_rx_err
+		// output wire [3:0]  m_tx_d,        //                              .mii_tx_d
+		// output wire        m_tx_en,       //                              .mii_tx_en
+		// output wire        m_tx_err,      //                              .mii_tx_err
+		// input  wire        m_rx_crs,      //                              .mii_crs
+		// input  wire        m_rx_col,      //                              .mii_col
+
+//-------------------------------------------------------------------------------------
+// connected to tx & rx ctrl block
+		//signals with ff perfix are avalon standard
+		//fifo trans port
+		input  wire        ff_rx_clk,     //     transmit_clock_connection.clk
+		output wire [7:0]  ff_rx_data,    //                       receive.data
+		//end of packet(frame)
+		output wire        ff_rx_eop,     //                              .endofpacket
+		//if an error byte is append to the final byte of a frame.
+		//indicates the frame tramsmited is invalid, and IP will treat it
+		//as an error
+		//ready to accept data from user
+		input  wire        ff_rx_rdy,     //                              .ready
+		//start of packet (frame)
+		output wire        ff_rx_sop,     //                              .startofpacket
+		//data valid
+		output wire        ff_rx_dval,    //                              .valid
+		//indicates user,
+		//diffrent number means diff type error
+		output wire [5:0]  rx_err,        //                              .error
+//-------------------------------------------------------------------------------------
+// mac_tx_ctrl.v prot list
+		//platform design, rise edge, independent
+		input  wire        ff_tx_clk,     //      receive_clock_connection.clk
+		//DATAWIDTH
+		input  wire [7:0]  ff_tx_data,    //                      transmit.data
+		input  wire        ff_tx_eop,     //                              .endofpacket
+		input  wire        ff_tx_err,     //                              .error
+		input  wire        ff_tx_sop,     //                              .startofpacket
+		//write enable for sop,eop,data
+		input  wire        ff_tx_wren,    //                              .valid
+
+		output wire        ff_tx_rdy,     //                              .ready
+
+//-------------------------------------------------------------------------------------		
+		//remote boot/shutdown pc through net wire
+		// the magic function only can sleep or wakeup a machine, sleep means power-down
+		// not power-off
+		output wire        magic_wakeup,  //                              .magic_wakeup
+		input  wire        magic_sleep_n, //                              .magic_sleep_n
+		input  wire        xon_gen,       //           mac_misc_connection.xon_gen
+		input  wire        xoff_gen,      //                              .xoff_gen
+//-------------------------------------------------------------------------------------
+	//component specific signal
+		// .....for tx
+		// crc_fwd =0, crc automative compute by IP
+		// crc_fwd =1, crc function provided by user
+		input  wire        ff_tx_crc_fwd, //                              .ff_tx_crc_fwd
+		
+		//User applications can use this signal to indicate when to stop writing to
+		//the FIFO buffer and initiate backpressure.
+		output wire        ff_tx_septy,   //                              .ff_tx_septy
+		//Asserted when an underflow occurs on the transmit FIFO buffer.
+		output wire        tx_ff_uflow,   //                              .tx_ff_uflow
+		output wire        ff_tx_a_full,  //                              .ff_tx_a_full
+		output wire        ff_tx_a_empty, //                              .ff_tx_a_empty
+		// .....for rx
+		output wire [17:0] rx_err_stat,   //                              .rx_err_stat
+		//0 - 3 indicates unicast, multicast, broadcast and VLAN
+		output wire [3:0]  rx_frm_type,   //                              .rx_frm_type
+		
+		//receive frame avaliable, This signal remains deasserted in the store and forward mode.
+		output wire        ff_rx_dsav,    //                              .ff_rx_dsav
+		//asserted when the fifo is full of threshold
+		output wire        ff_rx_a_full,  //                              .ff_rx_a_full
+		//same the above
+		output wire        ff_rx_a_empty  //                              .ff_rx_a_empty
+
+
+// MAC Configuration Register Space...........................................................................77
+// 5.1.1 Base Configuration Registers (Dword Offset 0x00 – 0x17)(24 bit).............................. 78
+// 5.1.2 Statistics Counters (Dword Offset 0x18 – 0x38)(33 bit)............................................ 84
+// 5.1.3 Transmit and Receive Command Registers (Dword Offset 0x3A – 0x3B)(2 bit)............86
+// 5.1.4 Supplementary Address (Dword Offset 0xC0 – 0xC7)(8 bit).....................................87
+// 5.1.5 IEEE 1588v2 Feature (Dword Offset 0xD0 – 0xD6)(7 bit)........................................ 88
+// 5.1.6 IEEE 1588v2 Feature PMA Delay................................................................. 89
+
+// total 74bit management Register

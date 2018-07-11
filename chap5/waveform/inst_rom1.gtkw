@@ -1,0 +1,58 @@
+[*]
+[*] GTKWave Analyzer v3.3.61 (w)1999-2014 BSI
+[*] Wed Jun 27 05:58:31 2018
+[*]
+[dumpfile] "/home/yulinLei/homemade_cpu/chap5/sopc.dump"
+[dumpfile_mtime] "Wed Jun 27 05:25:43 2018"
+[dumpfile_size] 28405
+[savefile] "/home/yulinLei/homemade_cpu/chap5/waveform/inst_rom1.gtkw"
+[timestart] 188700
+[size] 1366 669
+[pos] -39 -39
+*-15.993233 230000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] openmips_sopc_tb.
+[treeopen] openmips_sopc_tb.openmips_sopc0.
+[treeopen] openmips_sopc_tb.openmips_sopc0.openmips0.
+[sst_width] 229
+[signals_width] 226
+[sst_expanded] 1
+[sst_vpaned_height] 104
+@28
+openmips_sopc_tb.openmips_sopc0.openmips0.regfile1.clk
+@22
+openmips_sopc_tb.openmips_sopc0.openmips0.pc_reg0.pc[31:0]
+@28
+openmips_sopc_tb.openmips_sopc0.openmips0.pc_reg0.rst
+openmips_sopc_tb.openmips_sopc0.openmips0.pc_reg0.ce
+@22
+openmips_sopc_tb.openmips_sopc0.inst_rom0.addr[31:0]
+openmips_sopc_tb.openmips_sopc0.inst_rom0.inst[31:0]
+@28
+openmips_sopc_tb.openmips_sopc0.openmips0.regfile1.clk
+@22
+openmips_sopc_tb.openmips_sopc0.openmips0.if_id0.id_pc[31:0]
+openmips_sopc_tb.openmips_sopc0.openmips0.if_id0.id_inst[31:0]
+openmips_sopc_tb.openmips_sopc0.openmips0.id0.reg1_data_i[31:0]
+openmips_sopc_tb.openmips_sopc0.openmips0.id0.reg2_data_i[31:0]
+openmips_sopc_tb.openmips_sopc0.openmips0.id0.reg1_o[31:0]
+openmips_sopc_tb.openmips_sopc0.openmips0.id0.reg2_o[31:0]
+openmips_sopc_tb.openmips_sopc0.openmips0.id0.aluop_o[7:0]
+@28
+openmips_sopc_tb.openmips_sopc0.openmips0.id0.alusel_o[2:0]
+openmips_sopc_tb.openmips_sopc0.openmips0.id_ex0.clk
+@22
+openmips_sopc_tb.openmips_sopc0.openmips0.id_ex0.ex_reg2[31:0]
+openmips_sopc_tb.openmips_sopc0.openmips0.ex0.logicout[31:0]
+openmips_sopc_tb.openmips_sopc0.openmips0.ex0.wdata_o[31:0]
+openmips_sopc_tb.openmips_sopc0.openmips0.id_ex0.ex_wd[4:0]
+@28
+openmips_sopc_tb.openmips_sopc0.openmips0.id_ex0.ex_wreg
+openmips_sopc_tb.openmips_sopc0.openmips0.ex_mem0.clk
+@23
+openmips_sopc_tb.openmips_sopc0.openmips0.ex0.wd_i[4:0]
+openmips_sopc_tb.openmips_sopc0.openmips0.ex0.wd_o[4:0]
+openmips_sopc_tb.openmips_sopc0.openmips0.ex_wd_i[4:0]
+openmips_sopc_tb.openmips_sopc0.openmips0.id_wd_o[4:0]
+openmips_sopc_tb.openmips_sopc0.openmips0.id_ex0.ex_wd[4:0]
+[pattern_trace] 1
+[pattern_trace] 0

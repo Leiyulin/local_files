@@ -1,0 +1,24 @@
+#! /usr/local/bin/vvp
+:ivl_version "10.0 (stable)" "(v10_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x1faf6e0 .scope module, "memory" "memory" 2 1;
+ .timescale 0 0;
+v0x1faf860 .array "my_mem", 7 0, 7 0;
+    .scope S_0x1faf6e0;
+T_0 ;
+    %vpi_call 2 6 "$readmemh", "mem.list", v0x1faf860 {0 0 0};
+    %vpi_call 2 7 "$display", "0x00: %h", &A<v0x1faf860, 0> {0 0 0};
+    %vpi_call 2 8 "$display", "0x01: %h", &A<v0x1faf860, 3> {0 0 0};
+    %vpi_call 2 9 "$display", "end --" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "readmem_top.v";
