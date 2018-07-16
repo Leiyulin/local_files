@@ -1,4 +1,5 @@
-module mac_top #()
+module mac_top #
+()
 (
 	//user control MAC
 	
