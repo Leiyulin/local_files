@@ -335,9 +335,35 @@ mode equipment for that
 * notoriously difficult众所周知
 conundrum 复杂问题
 
+### carrier extension
+![carrier_extension](carrier_extension.png)
+
+>notice: the use of carrier extension bits assumes that the underlying physical signaling system is capable of sending and receiving non-data symbols based on signal encoding schemes
+
+>like padding data will full out the data field of original frames, frames of 64bytes(512 bits will be extended with 448bytes resulting 512 bytes.(maximum)
+
+* frame extension will reduce the efficiency when send frames of small size on half-duplex channel, to solve this conundrum, defines an optional capability called **frame bursting**
+
+>the total length of a frame burst is limited to 65,536 bit times plus the final frame transmission
+
+![frame_bursting](frame_bursting.png)
+
+>the frame bursting station keeps the channel active by transmitting special symbols as non-data symbols that all satations understand during the interframe gap times of the frames
+
+>the transmitting action is allowed to continue sending frames in a burst until the Frame Burst Limit(FBL is reached, which is the time to the start of the last frame in the burst.
+
+### Collision Domain
+collision domain refers to a single half-duplex Ethernetsystem whose elements are all part of the same signal timing domain
+
+### Ethernet Channel Capture
+the best known example illustrate MAC protocol is not perfect id an effect called **Ethernet Channel Capture**
+
+* contention争论， fray争辩
+
+> even though Ethernet Channel Capture effect will happen, but the system will also achieve **long-term fairness**
 
 
-
+>
 
 
 
