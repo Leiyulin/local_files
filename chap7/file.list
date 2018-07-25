@@ -1,0 +1,15 @@
+define.v
+ex_mem.v
+ex.v
+hilo_reg.v
+id_ex.v
+id.v
+if_id.v
+inst_rom.v
+mem.v
+mem_wb.v
+openmips_sopc_tb.v
+openmips_sopc.v
+openmips_top.v
+pc_reg.v
+regfile.v

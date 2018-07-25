@@ -6,7 +6,7 @@ module inst_rom(
 
 reg[`InstAddrBus] inst_mem[0:`InstMemNum-1];
 
-initial $readmemh ("inst_rom1.data", inst_mem);
+initial $readmemh ("logicInstTest.data", inst_mem);
 
 always @(*) begin
 	if (ce == `ChipDisable) begin

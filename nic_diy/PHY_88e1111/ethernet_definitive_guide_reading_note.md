@@ -363,12 +363,39 @@ the best known example illustrate MAC protocol is not perfect id an effect calle
 > even though Ethernet Channel Capture effect will happen, but the system will also achieve **long-term fairness**
 
 
->
+### envelope prefix and suffix
 
+>BLAM: binary logarithmic arbitration method
 
+* each layer of the network system is substantially independent of the other layers. this independence is called **encapsulation**
 
+* 两种方法来实现higher-level protocol sort(multiplexing and demultiplexing:
+>using type field
+>LLC: logical link control standard
 
+![LCC PDU](lcc_pdu.png)
 
+* LCC Sub-Network Access Protocol(SNAP 
+
+## Full-Duplex Ethernet
+
+* the link used between the stations must use a point-to-point media segment,
+
+* full-duplex can double the bandwidth of link
+
+#### operation of full duplex
+**requirements**:
+* the media system must have independent transimit and receive data paths that can operate simutanously
+
+* point-to-point link
+
+* both stations have to be configured using full-duplex
+
+虽然full-duplex mode 下，不需要defer and backoff,但是仍然需要wait for interframe gap period
+
+* the largest benefit of a full-duplex bandwidth increase is usually seen in backbone links because of symmetric
+
+* auto-negociation was originally developed for twisted-pair Ethernet devices only, the 10/100 Mbps fiber optic media systems do not support the Auto_Negociation standard, while Gigabit fiber optic systems have their own auto-negociation scheme
 
 
 

@@ -1,0 +1,29 @@
+[*]
+[*] GTKWave Analyzer v3.3.61 (w)1999-2014 BSI
+[*] Tue Jul 24 14:04:23 2018
+[*]
+[dumpfile] "/home/yulinLei/homemade_cpu/chap5/sopc.dump"
+[dumpfile_mtime] "Tue Jul 24 01:20:56 2018"
+[dumpfile_size] 44896
+[savefile] "/home/yulinLei/homemade_cpu/chap5/waveform/read_after_write_near1.gtkw"
+[timestart] 273300
+[size] 1366 669
+[pos] -367 -70
+*-15.627866 290000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] openmips_sopc_tb.
+[treeopen] openmips_sopc_tb.openmips_sopc0.
+[treeopen] openmips_sopc_tb.openmips_sopc0.openmips0.
+[sst_width] 229
+[signals_width] 204
+[sst_expanded] 1
+[sst_vpaned_height] 163
+@22
+openmips_sopc_tb.openmips_sopc0.openmips0.regfile1.rdata1[31:0]
+openmips_sopc_tb.openmips_sopc0.openmips0.regfile1.waddr[4:0]
+openmips_sopc_tb.openmips_sopc0.openmips0.regfile1.wdata[31:0]
+openmips_sopc_tb.openmips_sopc0.openmips0.regfile1.raddr2[4:0]
+@28
+openmips_sopc_tb.openmips_sopc0.openmips0.regfile1.re1
+openmips_sopc_tb.openmips_sopc0.openmips0.regfile1.re2
+[pattern_trace] 1
+[pattern_trace] 0

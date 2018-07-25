@@ -72,8 +72,8 @@ always @(*) begin
 		instvalid	<=	`InstInValid;		//changed
 		reg1_read_o	<=	1'b0;
 		reg2_read_o	<=	1'b0;
-		reg1_addr_o	<=	`NOPRegAddr;
-		reg2_addr_o <=	`NOPRegAddr;
+		reg1_addr_o	<=	inst_i[25:21];
+		reg2_addr_o <=	inst_i[20:16];
 		imm 		<=	32'h0;
 
 
