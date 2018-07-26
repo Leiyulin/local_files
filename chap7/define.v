@@ -26,6 +26,7 @@
 
 //define for regfile
 `define	RegBus			31:0
+`define DoubleRegBus	63:0
 `define	RegNum			32
 `define RegAddrBus		4:0
 `define	RegNumLog2		5
@@ -64,9 +65,13 @@
 `define	EXE_RES_NOP		3'b000
 `define	EXE_RES_SHIFT	3'b010 //changable
 `define EXE_RES_MOVE	3'b011
+`define EXE_RES_ARITHMETIC 3'b100	
+`define EXE_RES_MUL 3'b101
 
 //special op[31:26]
 `define	EXE_SPECIAL_INST 		6'b000000
+`define	EXE_REGIMM_INST 		6'b000001
+`define EXE_SPECIAL2_INST		6'b011100
 
 //R type special inst: these define is for func = inst[5:0]
 `define EXE_AND 		6'b100100
@@ -101,3 +106,51 @@
 `define	EXE_PREF		6'b110011
 
 `define	EXE_NOP 		6'b000000
+
+//simple algorithm define
+`define	EXE_SLT 		6'b101010
+`define	EXE_SLTU		6'b101011
+
+`define EXE_SLTI 		6'b001010
+`define	EXE_SLTIU 		6'b001011
+
+`define EXE_ADD 		6'b100000
+`define	EXE_ADDU 		6'b100001
+
+`define	EXE_SUB 		6'b100010
+`define	EXE_SUBU		6'b100011
+
+`define EXE_ADDI 		6'b001000
+`define	EXE_ADDIU 		6'b001001 
+
+// diffrent exe and exe_op
+// clz clo mul addi addiu
+// slti sltiu
+`define	EXE_CLZ 		6'b100000
+`define	EXE_CLO 		6'b100001
+
+`define EXE_MULT 		6'b011000
+`define EXE_MULTU 		6'b011001
+`define EXE_MUL 		6'b000010
+
+
+//algrithm op
+`define	EXE_SLT_OP		8'b00101010
+`define	EXE_SLTU_OP		8'b00101011
+`define EXE_SLTI_OP 		8'b00001010
+`define	EXE_SLTIU_OP 		8'b00001011
+
+`define EXE_ADD_OP 		8'b00100000
+`define	EXE_ADDU_OP 		8'b00100001
+
+`define	EXE_SUB_OP 		8'b00100010
+`define	EXE_SUBU_OP		8'b00100011
+
+`define EXE_ADDI_OP 		8'b00001000
+`define	EXE_ADDIU_OP 		8'b00001001 
+`define	EXE_CLZ_OP 		8'b00100000
+`define	EXE_CLO_OP 		8'b00100001
+
+`define EXE_MULT_OP 		8'b00011000
+`define EXE_MULTU_OP 		8'b00011001
+`define EXE_MUL_OP 		8'b00000010

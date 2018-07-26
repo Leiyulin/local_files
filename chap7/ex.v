@@ -35,6 +35,29 @@ reg[`RegBus]	moveres;
 reg[`RegBus]	HI;
 reg[`RegBus]	LO;
 
+//attention using wire to store!!!!
+wire 		ov_sum;
+wire 		reg1_eq_reg2;
+wire 		regq_lt_reg2;
+
+//attention the reg type
+reg[`RegBus]	alrithmeticres;
+
+wire[`RegBus]	reg2_i_mux; // reg2 2'complement
+wire[`RegBus]	reg1_i_not; // reg1 1'complement
+wire[`RegBus]	result_sum;
+wire[`RegBus]	opdata1_mult;
+wire[`RegBus]	opdata2_mult;
+
+wire[`DoubleRegBus]	hilo_temp;
+
+reg[`DoubleRegBus]	mulres;
+
+// true code
+// complemental code: 1's complement: plus one = true code
+//minus one = one's complement
+// 2'complement
+
 
 //hilo dealing for data relativity
 always @(*) begin
