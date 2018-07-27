@@ -9,15 +9,17 @@ reg a;
 
 initial begin
   clk = 1'b1;
+  #10 clk = 1'b0;
+  #70 clk = 1'b1;
 end
 
 initial begin
 	  #200 $stop;
 end
 initial begin
-  a = 1'b1;
-  #50 a = 1'b0;
-  #100 a = 1'b1;
+  a = 1'b0;
+  #50 a = 1'b1;
+  #100 a = 1'b0;
 
 end
 
@@ -28,11 +30,11 @@ end
 
 
 initial begin
-  test = 0;
+   test = 0;
 end
 
-always begin
-   test = a;
+initial begin
+  wait(clk) test <= a;
 end
 
 endmodule
