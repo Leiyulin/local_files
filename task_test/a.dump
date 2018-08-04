@@ -1,0 +1,31 @@
+$date
+	Fri Aug  3 11:38:28 2018
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module my_and $end
+$var wire 4 ! bus [3:0] $end
+$var wire 4 " busa [3:0] $end
+$var wire 4 # busb [3:0] $end
+$var wire 1 $ control $end
+$scope begin tranif[0] $end
+$upscope $end
+$scope begin tranif[1] $end
+$upscope $end
+$scope begin tranif[2] $end
+$upscope $end
+$scope begin tranif[3] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+z$
+bz #
+bz "
+bz !
+$end

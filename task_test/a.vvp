@@ -1,0 +1,122 @@
+#! /usr/local/bin/vvp
+:ivl_version "10.0 (stable)" "(v10_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x24f2670 .scope module, "my_and" "my_and" 2 3;
+ .timescale -9 -9;
+    .port_info 0 /INOUT 4 "bus"
+    .port_info 1 /INOUT 4 "busa"
+    .port_info 2 /INOUT 4 "busb"
+    .port_info 3 /INPUT 1 "control"
+o0x7fba18030018 .functor BUFZ 1, C4<z>; HiZ drive
+I0x24f3090 .island tran;
+p0x7fba18030018 .port I0x24f3090, o0x7fba18030018;
+; Elide local net with no drivers, v0x24e5770_0 name=_s0
+o0x7fba18030048 .functor BUFZ 1, C4<z>; HiZ drive
+p0x7fba18030048 .port I0x24f3090, o0x7fba18030048;
+; Elide local net with no drivers, v0x2507860_0 name=_s1
+o0x7fba18030078 .functor BUFZ 1, C4<z>; HiZ drive
+p0x7fba18030078 .port I0x24f3090, o0x7fba18030078;
+; Elide local net with no drivers, v0x2507940_0 name=_s10
+o0x7fba180300a8 .functor BUFZ 1, C4<z>; HiZ drive
+p0x7fba180300a8 .port I0x24f3090, o0x7fba180300a8;
+; Elide local net with no drivers, v0x2507a30_0 name=_s11
+o0x7fba180300d8 .functor BUFZ 1, C4<z>; HiZ drive
+p0x7fba180300d8 .port I0x24f3090, o0x7fba180300d8;
+; Elide local net with no drivers, v0x2507b10_0 name=_s12
+o0x7fba18030108 .functor BUFZ 1, C4<z>; HiZ drive
+p0x7fba18030108 .port I0x24f3090, o0x7fba18030108;
+; Elide local net with no drivers, v0x2507c40_0 name=_s13
+o0x7fba18030138 .functor BUFZ 1, C4<z>; HiZ drive
+p0x7fba18030138 .port I0x24f3090, o0x7fba18030138;
+; Elide local net with no drivers, v0x2507d20_0 name=_s14
+o0x7fba18030168 .functor BUFZ 1, C4<z>; HiZ drive
+p0x7fba18030168 .port I0x24f3090, o0x7fba18030168;
+; Elide local net with no drivers, v0x2507e00_0 name=_s15
+o0x7fba18030198 .functor BUFZ 1, C4<z>; HiZ drive
+p0x7fba18030198 .port I0x24f3090, o0x7fba18030198;
+; Elide local net with no drivers, v0x2507ee0_0 name=_s2
+o0x7fba180301c8 .functor BUFZ 1, C4<z>; HiZ drive
+p0x7fba180301c8 .port I0x24f3090, o0x7fba180301c8;
+; Elide local net with no drivers, v0x2508050_0 name=_s3
+o0x7fba180301f8 .functor BUFZ 1, C4<z>; HiZ drive
+p0x7fba180301f8 .port I0x24f3090, o0x7fba180301f8;
+; Elide local net with no drivers, v0x2508130_0 name=_s4
+o0x7fba18030228 .functor BUFZ 1, C4<z>; HiZ drive
+p0x7fba18030228 .port I0x24f3090, o0x7fba18030228;
+; Elide local net with no drivers, v0x2508210_0 name=_s5
+o0x7fba18030258 .functor BUFZ 1, C4<z>; HiZ drive
+p0x7fba18030258 .port I0x24f3090, o0x7fba18030258;
+; Elide local net with no drivers, v0x25082f0_0 name=_s6
+o0x7fba18030288 .functor BUFZ 1, C4<z>; HiZ drive
+p0x7fba18030288 .port I0x24f3090, o0x7fba18030288;
+; Elide local net with no drivers, v0x25083d0_0 name=_s7
+o0x7fba180302b8 .functor BUFZ 1, C4<z>; HiZ drive
+p0x7fba180302b8 .port I0x24f3090, o0x7fba180302b8;
+; Elide local net with no drivers, v0x25084b0_0 name=_s8
+o0x7fba180302e8 .functor BUFZ 1, C4<z>; HiZ drive
+p0x7fba180302e8 .port I0x24f3090, o0x7fba180302e8;
+; Elide local net with no drivers, v0x2508590_0 name=_s9
+o0x7fba18030318 .functor BUFZ 4, C4<zzzz>; HiZ drive
+p0x7fba18030318 .port I0x24f3090, o0x7fba18030318;
+v0x2508670_0 .net8 "bus", 3 0, p0x7fba18030318;  0 drivers, strength-aware
+o0x7fba18030348 .functor BUFZ 4, C4<zzzz>; HiZ drive
+p0x7fba18030348 .port I0x24f3090, o0x7fba18030348;
+v0x2508820_0 .net8 "busa", 3 0, p0x7fba18030348;  0 drivers, strength-aware
+o0x7fba18030378 .functor BUFZ 4, C4<zzzz>; HiZ drive
+p0x7fba18030378 .port I0x24f3090, o0x7fba18030378;
+v0x25088c0_0 .net8 "busb", 3 0, p0x7fba18030378;  0 drivers, strength-aware
+o0x7fba180303a8 .functor BUFZ 1, C4<z>; HiZ drive
+p0x7fba180303a8 .import I0x24f3090, o0x7fba180303a8;
+v0x25089a0_0 .net "control", 0 0, o0x7fba180303a8;  0 drivers
+S_0x24f2860 .scope generate, "tranif[0]" "tranif[0]" 2 8, 2 8 0, S_0x24f2670;
+ .timescale -9 -9;
+P_0x24e4ea0 .param/l "i" 0 2 8, +C4<00>;
+ .tranvp 4 1 0, I0x24f3090, p0x7fba18030318 p0x7fba18030018;
+ .tranvp 4 1 0, I0x24f3090, p0x7fba18030348 p0x7fba18030048;
+ .tranif1 I0x24f3090, p0x7fba18030018 p0x7fba18030048, p0x7fba180303a8;
+ .tranvp 4 1 0, I0x24f3090, p0x7fba18030318 p0x7fba18030198;
+ .tranvp 4 1 0, I0x24f3090, p0x7fba18030378 p0x7fba180301c8;
+ .tranif0 I0x24f3090, p0x7fba18030198 p0x7fba180301c8, p0x7fba180303a8;
+S_0x24e4f80 .scope generate, "tranif[1]" "tranif[1]" 2 8, 2 8 0, S_0x24f2670;
+ .timescale -9 -9;
+P_0x24e5170 .param/l "i" 0 2 8, +C4<01>;
+ .tranvp 4 1 1, I0x24f3090, p0x7fba18030318 p0x7fba180301f8;
+ .tranvp 4 1 1, I0x24f3090, p0x7fba18030348 p0x7fba18030228;
+ .tranif1 I0x24f3090, p0x7fba180301f8 p0x7fba18030228, p0x7fba180303a8;
+ .tranvp 4 1 1, I0x24f3090, p0x7fba18030318 p0x7fba18030258;
+ .tranvp 4 1 1, I0x24f3090, p0x7fba18030378 p0x7fba18030288;
+ .tranif0 I0x24f3090, p0x7fba18030258 p0x7fba18030288, p0x7fba180303a8;
+S_0x24e5230 .scope generate, "tranif[2]" "tranif[2]" 2 8, 2 8 0, S_0x24f2670;
+ .timescale -9 -9;
+P_0x24e5420 .param/l "i" 0 2 8, +C4<010>;
+ .tranvp 4 1 2, I0x24f3090, p0x7fba18030318 p0x7fba180302b8;
+ .tranvp 4 1 2, I0x24f3090, p0x7fba18030348 p0x7fba180302e8;
+ .tranif1 I0x24f3090, p0x7fba180302b8 p0x7fba180302e8, p0x7fba180303a8;
+ .tranvp 4 1 2, I0x24f3090, p0x7fba18030318 p0x7fba18030078;
+ .tranvp 4 1 2, I0x24f3090, p0x7fba18030378 p0x7fba180300a8;
+ .tranif0 I0x24f3090, p0x7fba18030078 p0x7fba180300a8, p0x7fba180303a8;
+S_0x24e54c0 .scope generate, "tranif[3]" "tranif[3]" 2 8, 2 8 0, S_0x24f2670;
+ .timescale -9 -9;
+P_0x24e56b0 .param/l "i" 0 2 8, +C4<011>;
+ .tranvp 4 1 3, I0x24f3090, p0x7fba18030318 p0x7fba180300d8;
+ .tranvp 4 1 3, I0x24f3090, p0x7fba18030348 p0x7fba18030108;
+ .tranif1 I0x24f3090, p0x7fba180300d8 p0x7fba18030108, p0x7fba180303a8;
+ .tranvp 4 1 3, I0x24f3090, p0x7fba18030318 p0x7fba18030138;
+ .tranvp 4 1 3, I0x24f3090, p0x7fba18030378 p0x7fba18030168;
+ .tranif0 I0x24f3090, p0x7fba18030138 p0x7fba18030168, p0x7fba180303a8;
+    .scope S_0x24f2670;
+T_0 ;
+    %vpi_call 2 15 "$dumpfile", "a.dump" {0 0 0};
+    %vpi_call 2 16 "$dumpvars" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "a.v";
