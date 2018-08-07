@@ -152,7 +152,94 @@ MDC -> SCL(serial clock line)
 
 ## auto-negotiation
 
+## downshift feature
+downshift 是说，在auto-negotiation 的时候，如果是PHY device 请求 1000 Mbp的话，会一直请求，不会降档（downshift），但是有的lagacy link只有12，36线可用，而downshift feature 会自动匹配。
 
+## loopback Modes
+
+* loopback 有三种：MAC interface loopback and line loopback， external 1000 Mbps loopback
+
+
+The MAC interface loopback mode used to test the functionality, timing, and signal intergrity of the MAC interface.
+
+when using MAC interface loopback with copper media, the receiver will be powered down
+
+### Virtual Cable Tester(VCT) feature
+
+#### TDR time domain reflectometry时域反射计
+TDR 通常用来测量传输线特征阻抗的仪器，它利用时域反射的原理进行特征阻抗的测量
+
+包括：
+* 快沿信号发生器
+* 采样示波器
+* 探头系统
+快沿信号遇到阻抗就会反射，由于反射和注入信号有时间差，所以采集到的叠加信号的边缘时带台阶的。
+
+### MDI/MDIX crossover
+crossover 的意思就是UTP 线有两种，一种是同型号连接线，一种是异型号连接线，而crossover 功能可以内部交叉，而不用换线了。
+
+The 88e device makes the necessary adjustment prior ro commencing auto-negociation.
+
+### polarity correction
+correct polariry errors on the receive pairs in 1000BASE-T and 10BASE-T.in 100BASE-T mode, the polarity dose not matter.
+
+### Data Terminal Equipment(DTE) Detect
+The  DTE power function is used to detect if a link partner requires power supplied by the device.
+
+first, monitoring the link partner, if there is no activity coming frome the link partner, DTE power engages, and special pulses are sent to detect if the link partner requires DTE power, if the link partner has a **low pass filter** installed ,the link partner will be detected as requiring DTE power.
+
+
+### Automatic and Manual Impedance Calibration
+#### 1, MAC interface calibration circuit
+32ohm automaticly,
+22 to 55 ohm NMOS and PMOS output transistors could be controlled be writing registers.
+
+### Packet Generator
+重点研究！！！
+
+### CRC error counter and frame counter
+本来CRC conter 和frame counter是MAC function。these functions are enabled through register writes and each counter is stored in eight register bit.
+
+enabling/ diabling/ clearing/ reading!!!
+
+### LED interface
+The LED interface consists of 6 pins:
+LED_LINK10
+LED_LINK100
+LED_LINK1000
+
+LED_DUPLEX
+LED_RX
+LED_TX
+也就是led灯可以正常显示PHY的功能state，也可以认为的定制，与state无关。
+
+reg25
+
+LEDs can be used in single LED mode or bi-color LED mode.
+LED outputs are low active.
+
+**There are four modes of link LED operation when the LEDs are controlled by the state of the PHY**
+register 24.5:3 = 000(direct LED mode)
+register 24.5:3 = 001, 010, 001, 100, 111(combined LED modes. 3 types)
+
+#### led pulse stretching and blink rate
+Some of the statuses can be pulse-stretched, Pulse stretching is necessary, because the duration of these status events may be too short to be observable on the LEDs. The pulse-stretch duration can ve programmed via register 24.14:12.
+
+Pulse stretching only applies to Duplex pin in Collision mode, or LED_RX and LED_TX pins.
+
+### IEEE 1149.1 controller
+also known as JTAG or boundary-scan, this Standard provides a solution for testing assembled printed circuit boards and other porducts based on highly complex digital integrated circuits and high-density surface-mounting assembly techniques.
+
+**具体在进行编写测试代码的时候，function description and registor description还会详细的看！！！**
+
+# SECTION 4: ELECTRICAL SPECIFICATIONS
+### absolute maximum ratings.
+### recommended operating conditions
+### thermal conditions
+
+
+## Section 6: order information
+#### ordering part numbers and package markings
 
 
 
