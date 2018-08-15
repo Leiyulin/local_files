@@ -1,0 +1,42 @@
+## 2.5 范数norm
+范数就是衡量一个向量的大小。
+Lp,当p=2时，称为欧几里得范数。Euclidean norm
+
+
+## 4.3 基于梯度的优化方法
+什么是优化：
+优化就是改变x以最小化或最大化某个函数f(x)的任务。
+
+初始函数也叫做：
+目标函数 objective function
+或准则 criterion
+
+当对其最小化时，也称为：
+代价函数 cost function
+损失函数 loss function
+误差函数 error function
+
+导数 derivative
+梯度下降 gradient descent
+临界点 critical point
+驻点 stationary point
+
+局部极小点 local minimum
+局部极大点 local maximum
+
+全局极大点 global maximum
+
+### 4.3.1 Jacobian and Hessian matrix
+有时我们需要计算输入和输出都为向量的函数的所有偏导数。包含所有这样的偏导数的矩阵称为Jacobian矩阵。
+
+>一阶导数组成jacobian矩阵，二阶导数组成Hessian矩阵。
+鞍点 saddle point
+
+## 机器学习基础
+机器学习算法是一种能够从数据中学习的算法，Mitchell定义：
+对于某类任务T和性能度量P，一个计算机程序被认为从经验E中学习是指，通过经验E改进后，它在任务T上由性能度量P衡量的性能有所提升。
+
+* 学习过程本身不能算作任务，学习是我们所谓的获取完成任务的能力。机器学习任务定义为机器学习系统如何处理样本example。样本是特征(feature)的集合
+
+常见任务：
+分类：
